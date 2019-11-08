@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6FDFEC18-0115-4911-BA34-D395DBF00A7D}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DontForget.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>DontForget.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <ReleaseVersion>0.2</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignKey>iPhone Developer: Chris Gilliam (CWABYN3KZF)</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignKey>iPhone Developer: Chris Gilliam (CWABYN3KZF)</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer: Chris Gilliam (CWABYN3KZF)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>Apple Distribution: Chris Gilliam (29GUZ9N844)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>ChrisG Distribution Profile</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Persistence \SQLiteDb.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont40-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont58-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont40-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont80-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dont167.png" />
+    <ImageAsset Include="Assets.xcassets\Splash.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Splash.imageset\TRA335.jpg" />
+    <ImageAsset Include="Assets.xcassets\Splash.imageset\TRA335-1.jpg" />
+    <ImageAsset Include="Assets.xcassets\Splash.imageset\TRA335-2.jpg" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\dontappstore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.848062" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.6.292</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\DontForget\DontForget.csproj">
+      <Project>{489B7AC7-1112-4835-B418-24224339A27E}</Project>
+      <Name>DontForget</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Persistence \" />
+    <Folder Include="Assets.xcassets\Splash.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\basket.png" />
+    <BundleResource Include="Resources\basket%402x.png" />
+    <BundleResource Include="Resources\cancel.png" />
+    <BundleResource Include="Resources\cancel%402x.png" />
+    <BundleResource Include="Resources\copy.png" />
+    <BundleResource Include="Resources\copy%402x.png" />
+    <BundleResource Include="Resources\database.png" />
+    <BundleResource Include="Resources\database%402x.png" />
+    <BundleResource Include="Resources\help.png" />
+    <BundleResource Include="Resources\help%402x.png" />
+    <BundleResource Include="Resources\import.png" />
+    <BundleResource Include="Resources\import%402x.png" />
+    <BundleResource Include="Resources\minus.png" />
+    <BundleResource Include="Resources\minus%402x.png" />
+    <BundleResource Include="Resources\money.png" />
+    <BundleResource Include="Resources\money%402x.png" />
+    <BundleResource Include="Resources\newitem.png" />
+    <BundleResource Include="Resources\newitem%402x.png" />
+    <BundleResource Include="Resources\ok.png" />
+    <BundleResource Include="Resources\ok%402x.png" />
+    <BundleResource Include="Resources\plus.png" />
+    <BundleResource Include="Resources\plus%402x.png" />
+    <BundleResource Include="Resources\save.png" />
+    <BundleResource Include="Resources\save%402x.png" />
+    <BundleResource Include="Resources\shopping.png" />
+    <BundleResource Include="Resources\shopping%402x.png" />
+    <BundleResource Include="Resources\sort.png" />
+    <BundleResource Include="Resources\sort%402x.png" />
+    <BundleResource Include="Resources\todo.png" />
+    <BundleResource Include="Resources\todo%402x.png" />
+    <BundleResource Include="Resources\trash.png" />
+    <BundleResource Include="Resources\trash%402x.png" />
+    <BundleResource Include="Resources\TRA335.jpg" />
+    <BundleResource Include="Resources\dont1024.png" />
+    <BundleResource Include="Resources\dont180.png" />
+  </ItemGroup>
+</Project>
