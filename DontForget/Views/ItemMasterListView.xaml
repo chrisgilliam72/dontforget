@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DontForget"
+             x:Class="DontForget.ItemMasterListView"
+             BackgroundColor="Wheat">
+
+    <StackLayout Margin="10,30,10,10">
+        <StackLayout Orientation="Horizontal"
+                     Padding="10,0,10,0">
+            <ImageButton Source="save.png" Clicked="ExportItems_Clicked"/>
+            <ImageButton Source="import.png" Clicked="ImportItems_Clicked"/>
+            <ImageButton Source="newitem.png" Clicked="AddItem_Clicked"
+                   HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+        <SearchBar Placeholder="Search for items"
+                   TextChanged="SearchTextChangedHandled" BackgroundColor="Sienna"/>
+        <ListView x:Name="itemListView"  IsPullToRefreshEnabled="True" Refreshing="HandleRefreshing" 
+                  ItemsSource="{Binding SortedItems}"
+                  BackgroundColor="Transparent"
+                  ItemTapped="Handle_ItemTapped"
+                  RowHeight="30" >
+            <!--Built in Cells-->
+            <!--Custom View Cells-->
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="10,0,10,0">
+                            <Label Text="{Binding Description}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding Price, StringFormat='{0:F2}'}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="End" />
+                        </StackLayout>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Edit" Clicked="OnEditItem"
+                                      CommandParameter="{Binding .}"
+                                      />
+                            <MenuItem Text="Delete"
+                                      IconImageSource="{local:EmbeddedImage ResourceId=ShoppingList.Images.trash40.png}"
+                                      Clicked="OnDeleteItem"
+                                      IsDestructive="True"
+                                      CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

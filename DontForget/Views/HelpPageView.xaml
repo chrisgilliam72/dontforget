@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:DontForget" x:Class="DontForget.HelpPageView" BackgroundColor="Wheat">
+    <ScrollView Margin="10,50,10,10">
+        <StackLayout>
+            <Label FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand">How To Use</Label>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="database.png" />
+                <Label FontSize="Header" FontAttributes="Bold" VerticalTextAlignment="Center">1. Create and maintain master list</Label>
+            </StackLayout>
+            <Label FontSize="Body" HorizontalTextAlignment="Start">Click on the icon on the top right of the master list to add items to your master list</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.Additem.png}" HorizontalOptions="Center" />
+            <Label FontSize="Body">Type in a description and price. To mark an item as important toggle the flag icon. Important items will appear in red in your shopping list</Label>
+            <Image  Margin="0,10,0,10" Source="{local:EmbeddedImage ResourceId=DontForget.Images.entry.png}" HorizontalOptions="Center" />
+            <Label FontSize="Body" HorizontalOptions="Start">To update an item tap on the entry in the list</Label>
+            <Label FontSize="Body">To remove an item swipe left on the item and select delete</Label>
+            <Image Margin="0,10,0,10" Source="{local:EmbeddedImage ResourceId=DontForget.Images.removeItem.png}" HorizontalOptions="Center" />
+            <StackLayout Orientation="Horizontal">
+                <Image Source="todo.png" />
+                <Label FontSize="Header" FontAttributes="Bold" VerticalTextAlignment="Center">2. Add items to your shopping list</Label>
+            </StackLayout>
+            <Label FontFamily="Body" HorizontalOptions="Start">The DontForget tab maintains an ongoing list of items which must be purchased. The list is maintained even after the app is closed.</Label>
+            <Label FontSize="Body">To add a single item tap on it in the master list.</Label>
+            <Label FontFamily="Body" HorizontalOptions="Start">To add many items at once to your shopping list click the icon in the top right corner:</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.Additem.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">Choose items to add from your master list</Label>
+            <Image  Margin="0,10,0,10" Source="{local:EmbeddedImage ResourceId=DontForget.Images.chooseItems.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body">At the bottom of the shopping list are two totals</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.bottom.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">The left total is the number of line items you have in your shopping list. The right total is total cost of all items in the shopping list.</Label>
+            <Label FontFamily="Body" HorizontalOptions="Start">To sort your list push the 2nd right most icon at the top.</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.sortitems.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">Then select sorting method from the list that pop ups</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.sorting.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">In order to indicate that more than 1 item of an item type must be purchased please increase and decrease item quantity with the plus and minus buttons</Label>
+            <Label FontFamily="Body" HorizontalOptions="Start">Increasing and decreasing item quantities will effect the total cost but not the line item count</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.quantity.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">To remove an item from the shopping list click on the item, swipe left and select remove:</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.removeDontForgetitem.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">To copy your shopping list to memmory press the icon on the top left </Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.copyitems.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">Then go to the application you wish to send the shopping list eg Whatsapp or Email and select paste menu item.</Label>
+            <Label FontFamily="Body" HorizontalOptions="Start">To clear the shopping list completely please use the trash can icon located at the top:</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.trash.png}" HorizontalOptions="Center" />
+            <StackLayout Orientation="Horizontal">
+                <Image Source="Shopping.png" />
+                <Label FontSize="Header" FontAttributes="Bold" VerticalTextAlignment="Center">3. Shopping Bill List</Label>
+            </StackLayout>
+            <Label FontFamily="Body" HorizontalOptions="Start">The shopping bill tab lists those items which you have crossed off your shopping list and have placed into your basket. As with the Shopping List the totals at the bottom represent the number of line items and the running cost of your purchases so far.</Label>
+            <Label FontFamily="Body" HorizontalOptions="Start">To move an item from the Sbopping List to the Shopping Bill click on an item in the list, swipe left and select the bought option</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.bought.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">To return an item back to the Shopping List from the Shopping Bill, select the time in the Bill list, swipe left and chose return :</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.shoppingbillreturnitem.png}" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">To clear the Shopping Bill list completely click the icon on the top right:</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.billtrashcan.png}" HorizontalOptions="Center" />
+            <StackLayout Orientation="Horizontal">
+                <Image Source="import.png" />
+                <Label FontSize="Header" FontAttributes="Bold" VerticalTextAlignment="Center">3. Transfering your master item list</Label>
+            </StackLayout>
+            <Label FontFamily="Body" HorizontalOptions="Start">
+                To transfer your master item list to a new device first click the icon located in the top left :
+            </Label>
+            <Image Source="save.png" HorizontalOptions="Center" />
+            <Label FontFamily="Body" HorizontalOptions="Start">Now conect your device to a computer with iTunes installed.</Label>
+            <Label FontFamily="Body" HorizontalOptions="Start">Open Itunes and click on File Sharing :</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.itunes1.png}" HorizontalOptions="Center" />
+             <Label FontFamily="Body" HorizontalOptions="Start">Click on DontForget in the list of apps and then select the shoppinglistitems.json file :</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.itunes2.png}" HorizontalOptions="Center" />
+             <Label FontFamily="Body" HorizontalOptions="Start">Click the save button to save this file on your computer</Label>
+             <Label FontFamily="Body" HorizontalOptions="Start">Connect your new device to your computer and again navigate to DontForget in the apps list in iTunes file sharing</Label>
+             <Label FontFamily="Body" HorizontalOptions="Start">This time click the add button and select the saved file shoppinglistitems.json</Label>
+             <Label FontFamily="Body" HorizontalOptions="Start">Open DontForget on your new device and click the import icon:</Label>
+             <Image Source="import.png" HorizontalOptions="Center" />
+             <Label FontFamily="Body" HorizontalOptions="Start">If your master list on the new device was empty your imported items will now show up in the list.</Label>
+            <Label FontFamily="Body" HorizontalOptions="Start">If you have existing items on your new device you will be asked to merge or overwrite</Label>
+            <Image Source="{local:EmbeddedImage ResourceId=DontForget.Images.mergeoverwrite.png}" HorizontalOptions="Center" />
+           <Label FontFamily="Body" HorizontalOptions="Start">Merge : Only add new items found in the import file.</Label>
+            <Label FontFamily="Body" HorizontalOptions="Start">Overwrite : Remove all existing items and add all items found in the import file.</Label>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

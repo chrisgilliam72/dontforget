@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DontForget"
+             x:Class="DontForget.ItemsSelectionView"
+             BackgroundColor="Wheat">
+
+    <StackLayout Margin="10,20,10,10">
+        <StackLayout Margin="10"
+                     Orientation="Horizontal">
+            <ImageButton Source="cancel.png"
+                         HorizontalOptions="StartAndExpand"
+                         Clicked="HandleCancelClicked" />
+            <ImageButton Source="ok.png"
+                         Clicked="HandleOKClicked" />
+        </StackLayout>
+        <SearchBar Placeholder="Search for items" BackgroundColor="Sienna"
+                   TextChanged="SearchTextChangedHandled" />
+        <ListView x:Name="MyListView"
+                  RowHeight="30"
+                  ItemsSource="{Binding Items}"
+                  BackgroundColor="Transparent"
+                  ItemTapped="Handle_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="10,0,10,0">
+                            <CheckBox IsChecked="{Binding IsSelected}" />
+                            <Label Text="{Binding Description}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding Price,StringFormat='{0:F2}'}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="End" />
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

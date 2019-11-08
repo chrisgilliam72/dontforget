@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DontForget"
+             x:Class="DontForget.ItemDetailView"
+             Title="Item Details"
+             BackgroundColor="Wheat">
+    <StackLayout>
+        <StackLayout Margin="10,30,10,0"
+                     Orientation="Horizontal">
+            <ImageButton Source="cancel.png" HorizontalOptions="StartAndExpand" Clicked="HandleCancelClicked" />
+            <ImageButton Source="ok.png" Clicked="HandleOKClicked" />
+        </StackLayout>
+        <Label HorizontalTextAlignment="Center" FontSize="Title"
+               HorizontalOptions="CenterAndExpand">Item Details</Label>
+        <TableView Intent="Form"
+                   BackgroundColor="Transparent">
+            <TableRoot>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="10,0,10,0"
+                                     Padding="0,5,0,5">
+                            <Image Source="{local:EmbeddedImage ResourceId=ShoppingList.Images.description100.png}" />
+                            <Label Text="Description:"
+                                   HorizontalTextAlignment="Center"
+                                   HorizontalOptions="Center"
+                                   VerticalTextAlignment="Center" />
+                            <Entry HeightRequest="40" TextColor="Black"
+                                   HorizontalOptions="FillAndExpand"
+                                   Text="{Binding Description}"
+                                   BackgroundColor="Transparent" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="10,0,10,0"
+                                     Padding="0,5,0,5">
+                            <Image Source="{local:EmbeddedImage ResourceId=ShoppingList.Images.money100.png}"
+                                   HorizontalOptions="Center" />
+                            <Label Text="Item Price"
+                                   Margin="0,0,10,0"
+                                   HorizontalTextAlignment="Center"
+                                   HorizontalOptions="Center"
+                                   VerticalTextAlignment="Center" />
+                            <Entry HeightRequest="40" TextColor="Black"
+                                   HorizontalOptions="FillAndExpand"
+                                   Text="{Binding Price}"
+                                   Keyboard="Numeric"
+                                   BackgroundColor="Transparent" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="10,0,10,0"
+                                     Padding="0,5,0,5">
+                            <Image Source="{local:EmbeddedImage ResourceId=ShoppingList.Images.redflag100.png}" />
+                            <Label Text="Is Important:"
+                                   HorizontalTextAlignment="Center"
+                                   HorizontalOptions="Center"
+                                   VerticalTextAlignment="Center" />
+                            <Switch HeightRequest="40"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsToggled="{Binding IsImportant}"
+                                    BackgroundColor="Transparent" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+
+</ContentPage>

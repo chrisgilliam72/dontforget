@@ -1,0 +1,88 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ReleaseVersion>0.2</ReleaseVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.848062" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="PCLStorage" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.34" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Persistence \" />
+    <Folder Include="Images\" />
+    <Folder Include="Markup Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\ShoppingBillView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\ShoppingBillViewold.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\Additem.png" />
+    <None Remove="Images\bought.png" />
+    <None Remove="Images\chooseItems.png" />
+    <None Remove="Images\entry.png" />
+    <None Remove="Images\description100.png" />
+    <None Remove="Images\money100.png" />
+    <None Remove="Images\lined-paper-texture.jpg" />
+    <None Remove="Images\notepad.png" />
+    <None Remove="Images\removeItem.png" />
+    <None Remove="Images\removeshoppinglistitem.png" />
+    <None Remove="Images\redflag100.png" />
+    <None Remove="Images\shopping.png" />
+    <None Remove="Images\shoppingbillreturnitem.png" />
+    <None Remove="Images\trash.png" />
+    <None Remove="Images\sorting.png" />
+    <None Remove="Images\yellownotepad.png" />
+    <None Remove="Images\billtrashcan.png" />
+    <None Remove="Images\itunes1.png" />
+    <None Remove="Images\itunes2.png" />
+    <None Remove="Images\mergeoverwrite.png" />
+    <None Remove="Images\notepad2.JPG" />
+    <None Remove="Images\notepad1.JPG" />
+    <None Remove="Images\notepadblue.jpg" />
+    <None Remove="Images\notepadnew.png" />
+    <None Remove="Images\sortitems.png" />
+    <None Remove="Images\bottom.png" />
+    <None Remove="Images\quantity.png" />
+    <None Remove="Images\copyitems.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Additem.png" />
+    <EmbeddedResource Include="Images\bought.png" />
+    <EmbeddedResource Include="Images\chooseItems.png" />
+    <EmbeddedResource Include="Images\entry.png" />
+    <EmbeddedResource Include="Images\description100.png" />
+    <EmbeddedResource Include="Images\money100.png" />
+    <EmbeddedResource Include="Images\lined-paper-texture.jpg" />
+    <EmbeddedResource Include="Images\removeItem.png" />
+    <EmbeddedResource Include="Images\removeshoppinglistitem.png" />
+    <EmbeddedResource Include="Images\redflag100.png" />
+    <EmbeddedResource Include="Images\shopping.png" />
+    <EmbeddedResource Include="Images\shoppingbillreturnitem.png" />
+    <EmbeddedResource Include="Images\trash.png" />
+    <EmbeddedResource Include="Images\sorting.png" />
+    <EmbeddedResource Include="Images\yellownotepad.png" />
+    <EmbeddedResource Include="Images\billtrashcan.png" />
+    <EmbeddedResource Include="Images\itunes1.png" />
+    <EmbeddedResource Include="Images\itunes2.png" />
+    <EmbeddedResource Include="Images\mergeoverwrite.png" />
+    <EmbeddedResource Include="Images\notepadblue.jpg" />
+    <EmbeddedResource Include="Images\notepadnew.png" />
+    <EmbeddedResource Include="Images\sortitems.png" />
+    <EmbeddedResource Include="Images\bottom.png" />
+    <EmbeddedResource Include="Images\quantity.png" />
+    <EmbeddedResource Include="Images\copyitems.png" />
+  </ItemGroup>
+</Project>

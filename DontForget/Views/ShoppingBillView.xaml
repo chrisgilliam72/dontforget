@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:ItemListView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:DontForget" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DontForget.ShoppingBillView" BackgroundColor="Wheat">
+    <AbsoluteLayout>
+        <Image AbsoluteLayout.LayoutBounds="0.5,0.6,0.9,0.95" AbsoluteLayout.LayoutFlags="All"  Margin="0,20,0,0"
+               Source="{local:EmbeddedImage ResourceId=DontForget.Images.lined-paper-texture.jpg}" Aspect="Fill" />
+        <Frame AbsoluteLayout.LayoutBounds="0.5,0.6,0.9,0.95" BorderColor="Black"  Margin="0,20,0,0"
+               AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Padding="0"
+               HasShadow="False">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,0,10,0">
+                    <Label Text="Bill So far" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontFamily="Courier" FontSize="Medium" HorizontalTextAlignment="Center" BackgroundColor="Transparent" TextColor="black" />
+                    <ImageButton VerticalOptions="Start" Clicked="TrashClicked" HorizontalOptions="End" Source="trash.png" />
+                </StackLayout>
+                <ListView VerticalOptions="FillAndExpand" ItemsSource="{Binding ItemList}" SeparatorVisibility="None" BackgroundColor="Transparent" RowHeight="30">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
+                                    <Label Text="{Binding ShoppingListDescription}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" FontFamily="Courier" FontSize="Medium" />
+                                    <Label Text="{Binding LineCost,StringFormat='{0:F2}'}" FontFamily="Courier" FontSize="Medium" VerticalTextAlignment="Center" HorizontalOptions="End" />
+                                </StackLayout>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Return" IsDestructive="True" CommandParameter="{Binding .}" Clicked="ReturnItemClicked" />
+                                </ViewCell.ContextActions>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout VerticalOptions="Start" Margin="5">
+                    <BoxView VerticalOptions="End" HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Black" />
+                    <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                        <Image Source="basket.png" VerticalOptions="Center" />
+                        <Label VerticalTextAlignment="Center" Text="{Binding ItemCount}" HorizontalOptions="StartAndExpand" />
+                        <Image Source="money.png" VerticalOptions="Center" HorizontalOptions="End" />
+                        <Label VerticalOptions="Center" HorizontalOptions="End" Text="{Binding TotalCost}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</local:ItemListView>

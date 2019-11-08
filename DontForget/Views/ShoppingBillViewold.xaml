@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:ItemListView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:local="clr-namespace:ShoppingList"
+             x:Class="ShoppingList.ShoppingCartView" BackgroundColor="tan">
+        <!--<local:ItemListView.ToolbarItems>
+        <ToolbarItem IconImageSource="{local:EmbeddedImage ShoppingList.Images.trash40.png}" Clicked=""/>
+    </local:ItemListView.ToolbarItems>-->
+    <AbsoluteLayout>
+        <!--<ListView AbsoluteLayout.LayoutBounds="35,140,0.80,0.65"  AbsoluteLayout.LayoutFlags="SizeProportional"
+                 VerticalOptions="FillAndExpand" Margin="5,20,5,5"
+                  ItemsSource="{Binding ItemList}" SeparatorVisibility="None" RowHeight="30">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="10,0,10,0">
+                            <Label Text="{Binding ShoppingListDescription}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="StartAndExpand" FontFamily="Courier" FontSize="Medium"
+                                   />
+                            <Label Text="{Binding LineCost,StringFormat='{0:F2}'}" FontFamily="Courier" FontSize="Medium"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="End" />
+                        </StackLayout>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Remove"
+                                      IsDestructive="True"
+                                      CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <StackLayout VerticalOptions="Start" AbsoluteLayout.LayoutBounds="35,1,0.8,60"
+                     AbsoluteLayout.LayoutFlags="YProportional,WidthProportional"
+                     BackgroundColor="Transparent">
+            <BoxView
+                     VerticalOptions="End"
+                     HeightRequest="1"
+                     HorizontalOptions="FillAndExpand"
+                     BackgroundColor="Black" />
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="Transparent">
+                <Image Source="{local:EmbeddedImage ShoppingList.Images.shopping40.png}"
+                       VerticalOptions="Center" />
+                <Label VerticalTextAlignment="Center"
+                       Text="{Binding ItemCount}"
+                       HorizontalOptions="StartAndExpand" />
+                <Image  Source="{local:EmbeddedImage ShoppingList.Images.money40.png}"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End" />
+                <Label Margin="0,0,5,0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       Text="{Binding TotalCost}" />
+            </StackLayout>
+
+        </StackLayout>
+    </AbsoluteLayout>
+</local:ItemListView>

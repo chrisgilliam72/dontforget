@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:ItemListView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:DontForget" x:Class="DontForget.ShoppingListView" BackgroundColor="Wheat">
+
+    <AbsoluteLayout>
+        <Image AbsoluteLayout.LayoutBounds="0.5,0.6,0.9,0.95" AbsoluteLayout.LayoutFlags="All"  Margin="0,20,0,0"
+               Source="{local:EmbeddedImage ResourceId=DontForget.Images.notepadblue.jpg}" Aspect="Fill" />
+        <Frame AbsoluteLayout.LayoutBounds="0.5,0.6,0.9,0.95" AbsoluteLayout.LayoutFlags="All" BorderColor="Black"  Margin="0,20,0,0"
+               BackgroundColor="Transparent" HasShadow="False" Padding="0">
+            <StackLayout>
+                <!--AbsoluteLayout.LayoutBounds="0.5,0.1,0.95,0.1"  AbsoluteLayout.LayoutFlags="All" Margin="20,30,20,0"-->
+                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent" Margin="5,0,5,0">
+                    <ImageButton Source="copy.png" Clicked="CopyListClicked" />
+                    <Label Text="Shopping List" TextColor="Black" TextDecorations="Underline" FontFamily="Snell Roundhand" FontSize="Large" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                    <ImageButton Source="trash.png" Clicked="TrashClicked" />
+                    <ImageButton Source="sort.png" Clicked="FilterClicked" />
+                    <ImageButton Source="newitem.png" Clicked="AddItemsClicked" />
+                </StackLayout>
+
+                <!--AbsoluteLayout.LayoutBounds="0.5,0.60,0.80,0.65"  AbsoluteLayout.LayoutFlags="All"-->
+                <ListView VerticalOptions="FillAndExpand" RowHeight="30" BackgroundColor="Transparent" ItemsSource="{Binding ItemList}" SeparatorVisibility="None" IsPullToRefreshEnabled="True" Refreshing="HandleRefreshing" ItemSelected="HandleItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
+                                    <ImageButton Source="minus.png" Clicked="OnQuantityMinus" CommandParameter="{Binding .}" />
+                                    <ImageButton Source="plus.png" Clicked="OnQuantityPlus" CommandParameter="{Binding .}" />
+                                    <Label Text="{Binding ShoppingListDescription}" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" FontFamily="Times New Roman" FontSize="Medium" TextColor="{Binding TextColor}" />
+                                    <Label Text="{Binding LineCostString}" FontFamily="Times New Roman" FontSize="Medium" TextColor="{Binding TextColor}" VerticalTextAlignment="Center" HorizontalOptions="End" />
+
+                                </StackLayout>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Bought" Clicked="OnBuyItem" CommandParameter="{Binding .}" />
+                                    <MenuItem Text="Remove" Clicked="OnRemoveItem" IsDestructive="True" CommandParameter="{Binding .}" />
+                                </ViewCell.ContextActions>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout Margin="5">
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Black" />
+                    <StackLayout  Orientation="Horizontal" BackgroundColor="Transparent">
+                        <Image Source="basket.png" VerticalOptions="Center" />
+                        <Label VerticalTextAlignment="Center" Text="{Binding ItemCount}" HorizontalOptions="StartAndExpand" />
+                        <Image  Source="money.png" VerticalOptions="Center" HorizontalOptions="End" />
+                        <Label  VerticalOptions="Center" HorizontalOptions="End" Text="{Binding TotalCost}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</local:ItemListView>
+
+
+<!--<StackLayout AbsoluteLayout.LayoutBounds="10,25,0.95,0.95" AbsoluteLayout.LayoutFlags="SizeProportional" BackgroundColor="Transparent">-->
